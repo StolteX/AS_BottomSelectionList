@@ -8,6 +8,9 @@ Version=8.3
 Changelog:
 V1.00
 	-Release
+V1.01
+	-BugFixes
+	-Add GetItems - Get all items as list of AS_SelectionList_Item
 #End If
 
 #Event: ActionButtonClicked
@@ -41,13 +44,13 @@ Sub Class_Globals
 	Private m_ActionButtonBackgroundColor As Int
 	Private m_ActionButtonTextColor As Int
 	
-	Type AS_BottomActionSheet_Theme(BodyColor As Int,TextColor As Int,DragIndicatorColor As Int,SelectionList As AS_SelectionList_Theme,ActionButtonBackgroundColor As Int,ActionButtonTextColor As Int)
+	Type AS_BottomSelectionList_Theme(BodyColor As Int,TextColor As Int,DragIndicatorColor As Int,SelectionList As AS_SelectionList_Theme,ActionButtonBackgroundColor As Int,ActionButtonTextColor As Int)
 	
 End Sub
 
-Public Sub getTheme_Light As AS_BottomActionSheet_Theme
+Public Sub getTheme_Light As AS_BottomSelectionList_Theme
 	
-	Dim Theme As AS_BottomActionSheet_Theme
+	Dim Theme As AS_BottomSelectionList_Theme
 	Theme.Initialize
 	Theme.BodyColor = xui.Color_White
 	Theme.TextColor = xui.Color_Black
@@ -64,9 +67,9 @@ Public Sub getTheme_Light As AS_BottomActionSheet_Theme
 	
 End Sub
 
-Public Sub getTheme_Dark As AS_BottomActionSheet_Theme
+Public Sub getTheme_Dark As AS_BottomSelectionList_Theme
 	
-	Dim Theme As AS_BottomActionSheet_Theme
+	Dim Theme As AS_BottomSelectionList_Theme
 	Theme.Initialize
 	Theme.BodyColor = xui.Color_ARGB(255,32, 33, 37)
 	Theme.TextColor = xui.Color_White
@@ -83,7 +86,7 @@ Public Sub getTheme_Dark As AS_BottomActionSheet_Theme
 	
 End Sub
 
-Public Sub setTheme(Theme As AS_BottomActionSheet_Theme)
+Public Sub setTheme(Theme As AS_BottomSelectionList_Theme)
 	
 	m_HeaderColor = Theme.BodyColor
 	m_BodyColor = Theme.BodyColor
@@ -126,6 +129,11 @@ End Sub
 
 Public Sub Clear
 	m_SelectionList.Clear
+End Sub
+
+'Get all items as list of AS_SelectionList_Item
+Public Sub GetItems As List
+	Return m_SelectionList.GetItems
 End Sub
 
 Public Sub AddItem(Text As String,Icon As B4XBitmap,Value As Object) As AS_SelectionList_Item
