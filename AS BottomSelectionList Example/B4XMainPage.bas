@@ -33,7 +33,6 @@ End Sub
 
 Private Sub OpenSheet(DarkMode As Boolean)
 	BottomSelectionList.Initialize(Me,"BottomSelectionList",Root)
-	
 	BottomSelectionList.Theme = IIf(DarkMode,BottomSelectionList.Theme_Dark,BottomSelectionList.Theme_Light)
 	BottomSelectionList.ActionButtonVisible = True
 
@@ -76,21 +75,21 @@ End Sub
 #Region ButtonEvents
 
 #If B4J
-Private Sub xlbl_OpenDarkPicker_MouseClicked (EventData As MouseEvent)
+Private Sub xlbl_OpenDark_MouseClicked (EventData As MouseEvent)
 	OpenDarkDatePicker
 End Sub
 #Else
-Private Sub xlbl_OpenDarkPicker_Click
+Private Sub xlbl_OpenDark_Click
 	OpenDarkDatePicker
 End Sub
 #End If
 
 #If B4J
-Private Sub xlbl_OpenLightPicker_MouseClicked (EventData As MouseEvent)
+Private Sub xlbl_OpenLight_MouseClicked (EventData As MouseEvent)
 	OpenLightDatePicker
 End Sub
 #Else
-Private Sub xlbl_OpenLightPicker_Click
+Private Sub xlbl_OpenLight_Click
 	OpenLightDatePicker
 End Sub
 #End If

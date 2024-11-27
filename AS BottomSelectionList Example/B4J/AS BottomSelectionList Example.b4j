@@ -9,10 +9,11 @@ Library3=b4xpages
 Library4=jcore
 Library5=jfx
 Library6=xui views
-Module1=|relative|..\..\AS_BottomActionSheet
+Library7=as_selectionlist
+Module1=|relative|..\..\AS_BottomSelectionList
 Module2=|relative|..\B4XMainPage
 NumberOfFiles=1
-NumberOfLibraries=6
+NumberOfLibraries=7
 NumberOfModules=2
 Version=10
 @EndOfDesignText@
