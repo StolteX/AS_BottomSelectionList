@@ -11,6 +11,13 @@ V1.00
 V1.01
 	-BugFixes
 	-Add GetItems - Get all items as list of AS_SelectionList_Item
+V1.02
+	-Improvements
+	-Add SetSelections2 - Set the Selections via a list
+	-Add get and set SideGap
+		-Default: 10dip
+	-Add get SelectedItemProperties
+	-Add get ItemProperties
 #End If
 
 #Event: ActionButtonClicked
@@ -166,7 +173,7 @@ Public Sub ShowPicker
 	
 	xpnl_Header.Color = m_HeaderColor
 	
-	xpnl_Header.AddView(xpnl_DragIndicator,SheetWidth/2 - 70dip/2,m_HeaderHeight - 6dip,70dip,6dip)
+	xpnl_Header.AddView(xpnl_DragIndicator,SheetWidth/2 - 70dip/2,m_HeaderHeight/2 - 6dip/2,70dip,6dip)
 	Dim ARGB() As Int = GetARGB(m_DragIndicatorColor)
 	xpnl_DragIndicator.SetColorAndBorder(xui.Color_ARGB(80,ARGB(1),ARGB(2),ARGB(3)),0,0,3dip)
 	
@@ -209,6 +216,23 @@ End Sub
 
 #Region Properties
 
+Public Sub getItemProperties As AS_SelectionList_ItemProperties
+	Return m_SelectionList.ItemProperties
+End Sub
+
+Public Sub getSelectedItemProperties As AS_SelectionList_SelectedItemProperties
+	Return m_SelectionList.SelectedItemProperties
+End Sub
+
+'Default: 10dip
+Public Sub setSideGap(SideGap As Float)
+	m_SelectionList.SideGap = SideGap
+End Sub
+
+Public Sub getSideGap As Float
+	Return m_SelectionList.SideGap
+End Sub
+
 'Fade or None
 Public Sub setThemeChangeTransition(ThemeChangeTransition As String)
 	m_SelectionList.ThemeChangeTransition = ThemeChangeTransition
@@ -239,6 +263,17 @@ End Sub
 '<code>BottomSelectionList.SetSelections(Array As Object(1,3))</code>
 Public Sub SetSelections(Values() As Object)
 	m_SelectionList.SetSelections(Values)
+End Sub
+
+'<code>
+'	Dim lst As List
+'	lst.Initialize
+'	lst.Add(1)
+'	lst.Add(3)
+'	BottomSelectionList.SetSelections2(lst)
+'</code>
+Public Sub SetSelections2(Values As List)
+	m_SelectionList.SetSelections2(Values)
 End Sub
 
 'The maximum number of items that are visible before it becomes a list and must be scrolled
