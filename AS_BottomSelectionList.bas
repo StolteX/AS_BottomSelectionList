@@ -56,7 +56,6 @@ Sub Class_Globals
 	Private m_MaxVisibleItems As Int = 5
 	Private m_ActionButtonBackgroundColor As Int
 	Private m_ActionButtonTextColor As Int
-	Private m_SelectionIconAlignment As String = "RIGHT"
 	
 	Type AS_BottomSelectionList_Theme(BodyColor As Int,TextColor As Int,DragIndicatorColor As Int,SelectionList As AS_SelectionList_Theme,ActionButtonBackgroundColor As Int,ActionButtonTextColor As Int)
 	
@@ -226,11 +225,11 @@ End Sub
 'Left or Right
 'Default: Right
 Public Sub setSelectionIconAlignment(Alignment As String)
-	m_SelectionIconAlignment = Alignment
+	m_SelectionList.SelectionIconAlignment = Alignment
 End Sub
 
 Public Sub getSelectionIconAlignment As String
-	Return m_SelectionIconAlignment
+	Return m_SelectionList.SelectionIconAlignment
 End Sub
 
 Public Sub setShowSeperators(ShowSeperators As Boolean)

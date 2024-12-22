@@ -35,6 +35,7 @@ Private Sub OpenSheet(DarkMode As Boolean)
 	BottomSelectionList.Initialize(Me,"BottomSelectionList",Root)
 	BottomSelectionList.Theme = IIf(DarkMode,BottomSelectionList.Theme_Dark,BottomSelectionList.Theme_Light)
 	BottomSelectionList.ActionButtonVisible = True
+	BottomSelectionList.SelectionIconAlignment = BottomSelectionList.SelectionIconAlignment_Left
 
 	For i = 0 To 20 -1
 		BottomSelectionList.AddItem("Test " & i,Null,i)
