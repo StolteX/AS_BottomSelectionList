@@ -18,6 +18,12 @@ V1.02
 		-Default: 10dip
 	-Add get SelectedItemProperties
 	-Add get ItemProperties
+V1.03
+	-New SelectionIconAlignment - Alignment of the check icon of an item when it is selected
+		-Default: Right
+		-Left or Right
+	-New - get and set ShowSeperators
+	-Update - If you set MaxVisibleItems to 0 then no limit is now set
 #End If
 
 #Event: ActionButtonClicked
@@ -50,6 +56,7 @@ Sub Class_Globals
 	Private m_MaxVisibleItems As Int = 5
 	Private m_ActionButtonBackgroundColor As Int
 	Private m_ActionButtonTextColor As Int
+	Private m_SelectionIconAlignment As String = "RIGHT"
 	
 	Type AS_BottomSelectionList_Theme(BodyColor As Int,TextColor As Int,DragIndicatorColor As Int,SelectionList As AS_SelectionList_Theme,ActionButtonBackgroundColor As Int,ActionButtonTextColor As Int)
 	
@@ -151,7 +158,7 @@ Public Sub ShowPicker
 	
 	Dim SheetWidth As Float = IIf(m_SheetWidth=0,xParent.Width,m_SheetWidth)
 	
-	Dim ListHeight As Float = m_SelectionList.ItemProperties.Height*Min(m_SelectionList.Size,m_MaxVisibleItems)
+	Dim ListHeight As Float = m_SelectionList.ItemProperties.Height*IIf(m_MaxVisibleItems=0,m_SelectionList.Size, Min(m_SelectionList.Size,m_MaxVisibleItems))
 	Dim BodyHeight As Float = ListHeight
 	Dim SafeAreaHeight As Float = 0
 	
@@ -215,6 +222,24 @@ Public Sub HidePicker
 End Sub
 
 #Region Properties
+
+'Left or Right
+'Default: Right
+Public Sub setSelectionIconAlignment(Alignment As String)
+	m_SelectionIconAlignment = Alignment
+End Sub
+
+Public Sub getSelectionIconAlignment As String
+	Return m_SelectionIconAlignment
+End Sub
+
+Public Sub setShowSeperators(ShowSeperators As Boolean)
+	m_SelectionList.ShowSeperators = ShowSeperators
+End Sub
+
+Public Sub getShowSeperators As Boolean
+	Return m_SelectionList.ShowSeperators
+End Sub
 
 Public Sub getItemProperties As AS_SelectionList_ItemProperties
 	Return m_SelectionList.ItemProperties
@@ -425,6 +450,15 @@ End Sub
 
 Public Sub getSelectionMode_Multi As String
 	Return "Multi"
+End Sub
+
+
+Public Sub getSelectionIconAlignment_Left As String
+	Return "LEFT"
+End Sub
+
+Public Sub getSelectionIconAlignment_Right As String
+	Return "RIGHT"
 End Sub
 
 #End Region

@@ -7,6 +7,6 @@ ModuleBreakpoints2=
 ModuleClosedNodes0=
 ModuleClosedNodes1=
 ModuleClosedNodes2=1
-NavigationStack=B4XMainPage,B4XPage_Created,20,0,AS_BottomSelectionList,SetSelections,240,0,B4XMainPage,OpenSheet,39,6,AS_BottomSelectionList,ShowPicker,164,0,AS_BottomSelectionList,getSideGap,212,4,AS_BottomSelectionList,setSideGap,212,5,AS_BottomSelectionList,Class_Globals,19,4,AS_BottomSelectionList,getItemProperties,212,5,AS_BottomSelectionList,HidePicker,210,0,AS_BottomSelectionList,getSelectedItemProperties,215,3
+NavigationStack=AS_BottomSelectionList,setSideGap,212,5,AS_BottomSelectionList,getSelectedItemProperties,218,3,AS_BottomSelectionList,getItemProperties,221,5,AS_BottomSelectionList,setShowSeperators,213,1,AS_BottomSelectionList,getShowSeperators,216,1,AS_BottomSelectionList,ShowPicker,149,2,AS_BottomSelectionList,Class_Globals,52,6,AS_BottomSelectionList,HidePicker,219,0,AS_BottomSelectionList,getSelectionIconAlignment,227,0,AS_BottomSelectionList,getSelectionMode_Multi,448,0,AS_BottomSelectionList,getSelectionIconAlignment_Right,455,0
 SelectedBuild=0
 VisibleModules=2,1
