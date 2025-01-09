@@ -7,6 +7,6 @@ ModuleBreakpoints2=
 ModuleClosedNodes0=4
 ModuleClosedNodes1=
 ModuleClosedNodes2=
-NavigationStack=AS_BottomSelectionList,GetItems,127,3,B4XMainPage,Class_Globals,11,0,AS_BottomSelectionList,Initialize,118,0,AS_BottomSelectionList,getTheme_Light,48,0,B4XMainPage,OpenSheet,31,6,AS_BottomSelectionList,setShowSeperators,230,0,AS_BottomSelectionList,getSelectionIconAlignment,226,0,AS_BottomSelectionList,setSelectionIconAlignment,222,0,AS_BottomSelectionList,HidePicker,220,0,AS_BottomSelectionList,Class_Globals,51,0
+NavigationStack=AS_BottomSelectionList,Initialize,118,0,AS_BottomSelectionList,getTheme_Light,48,0,B4XMainPage,OpenSheet,31,6,AS_BottomSelectionList,setShowSeperators,230,0,AS_BottomSelectionList,getSelectionIconAlignment,226,0,AS_BottomSelectionList,Class_Globals,51,0,AS_BottomSelectionList,setSelectionIconAlignment,225,0,AS_BottomSelectionList,setSideGap,221,4,AS_BottomSelectionList,getSideGap,225,2,AS_BottomSelectionList,HidePicker,216,0
 SelectedBuild=0
 VisibleModules=2,1

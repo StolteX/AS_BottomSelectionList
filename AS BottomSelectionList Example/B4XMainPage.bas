@@ -65,6 +65,14 @@ Private Sub BottomSelectionList_SelectionChanged
 
 End Sub
 
+Private Sub BottomSelectionList_SelectionItemChanged(Item As Object,Checked As Boolean)
+	If Item Is AS_SelectionList_Item Then
+		Log("Item selected: " & Item.As(AS_SelectionList_Item).Text & " Checked: " & Checked)
+	Else
+		Log("SubItem selected: " & Item.As(AS_SelectionList_SubItem).Text & " Checked: " & Checked)
+	End If
+End Sub
+
 Private Sub BottomSelectionList_ActionButtonClicked
 	Log("ActionButtonClicked")
 	BottomSelectionList.HidePicker

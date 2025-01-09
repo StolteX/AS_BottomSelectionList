@@ -24,11 +24,14 @@ V1.03
 		-Left or Right
 	-New - get and set ShowSeperators
 	-Update - If you set MaxVisibleItems to 0 then no limit is now set
+V1.04
+	-New SelectionItemChanged Event - In the event, the item that was checked/unchecked is returned in order to be able to react better instead of always having to go through the complete selected item list
 #End If
 
 #Event: ActionButtonClicked
 #Event: Close
 #Event: SelectionChanged
+#Event: SelectionItemChanged(Item As Object,Checked As Boolean)
 
 Sub Class_Globals
 	
@@ -392,6 +395,12 @@ End Sub
 Private Sub SelectionList_SelectionChanged
 	If xui.SubExists(mCallBack, mEventName & "_SelectionChanged",0) Then
 		CallSub(mCallBack, mEventName & "_SelectionChanged")
+	End If
+End Sub
+
+Private Sub SelectionList_SelectionItemChanged(Item As Object,Checked As Boolean)
+	If xui.SubExists(mCallBack, mEventName & "_SelectionItemChanged",2) Then
+		CallSub3(mCallBack, mEventName & "_SelectionItemChanged",Item,Checked)
 	End If
 End Sub
 
