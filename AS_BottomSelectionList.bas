@@ -26,6 +26,9 @@ V1.03
 	-Update - If you set MaxVisibleItems to 0 then no limit is now set
 V1.04
 	-New SelectionItemChanged Event - In the event, the item that was checked/unchecked is returned in order to be able to react better instead of always having to go through the complete selected item list
+V1.05
+	-New DeselectItem - Deselect by AS_SelectionList_Item or AS_SelectionList_SubItem
+	-New DeselectItem2 - Deselect by Value
 #End If
 
 #Event: ActionButtonClicked
@@ -301,6 +304,16 @@ End Sub
 '</code>
 Public Sub SetSelections2(Values As List)
 	m_SelectionList.SetSelections2(Values)
+End Sub
+
+'Returns True if the item was found
+Public Sub DeselectItem(Item As Object) As Boolean
+	Return m_SelectionList.DeselectItem(Item)
+End Sub
+
+'Returns True if the item was found
+Public Sub DeselectItem2(Value As Object) As Boolean
+	Return m_SelectionList.DeselectItem2(Value)
 End Sub
 
 'The maximum number of items that are visible before it becomes a list and must be scrolled
